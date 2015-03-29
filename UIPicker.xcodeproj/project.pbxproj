@@ -14,6 +14,7 @@
 		796559991AC45AFC00F03384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 796559981AC45AFC00F03384 /* Images.xcassets */; };
 		7965599C1AC45AFC00F03384 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7965599A1AC45AFC00F03384 /* LaunchScreen.xib */; };
 		796559A81AC45AFC00F03384 /* UIPickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796559A71AC45AFC00F03384 /* UIPickerTests.swift */; };
+		796559B21AC45EDD00F03384 /* CheeseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796559B11AC45EDD00F03384 /* CheeseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		796559A11AC45AFC00F03384 /* UIPickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIPickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		796559A61AC45AFC00F03384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		796559A71AC45AFC00F03384 /* UIPickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerTests.swift; sourceTree = "<group>"; };
+		796559B11AC45EDD00F03384 /* CheeseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheeseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				7965598E1AC45AFB00F03384 /* AppDelegate.swift */,
 				796559931AC45AFC00F03384 /* ViewController.swift */,
+				796559B11AC45EDD00F03384 /* CheeseViewController.swift */,
 				796559951AC45AFC00F03384 /* Main.storyboard */,
 				796559981AC45AFC00F03384 /* Images.xcassets */,
 				7965599A1AC45AFC00F03384 /* LaunchScreen.xib */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				796559941AC45AFC00F03384 /* ViewController.swift in Sources */,
+				796559B21AC45EDD00F03384 /* CheeseViewController.swift in Sources */,
 				7965598F1AC45AFB00F03384 /* AppDelegate.swift in Sources */,
 				796559921AC45AFB00F03384 /* UIPicker.xcdatamodeld in Sources */,
 			);

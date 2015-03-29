@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aEe-eP-wcW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="UIPicker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,128 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your Favorite Cheese!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X91-KF-uSJ">
+                                <rect key="frame" x="16" y="72" width="206" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Favorite Cheese is" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3l-TG-oQe">
+                                <rect key="frame" x="215" y="271" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheese" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ead-cG-0Yl">
+                                <rect key="frame" x="271" y="300" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3c-4Z-ns2">
+                                <rect key="frame" x="240" y="329" width="120" height="30"/>
+                                <state key="normal" title="Pass the Cheese!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="passTheCheeseButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="lKV-rt-SpX"/>
+                                    <segue destination="Hpf-Qk-nsR" kind="show" identifier="PassTheCheeseSegue" id="Dn2-sW-5Fn"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYz-ad-lcc">
+                                <rect key="frame" x="215" y="101" width="170" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="YiD-fC-fiB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="irP-Id-d4L"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="nid-yo-N3t"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="tYz-ad-lcc" secondAttribute="centerX" constant="-0.5" id="1is-l6-dxc"/>
+                            <constraint firstAttribute="centerX" secondItem="m3c-4Z-ns2" secondAttribute="centerX" id="B69-2O-9dY"/>
+                            <constraint firstItem="X91-KF-uSJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="C9i-RJ-Fta"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tYz-ad-lcc" secondAttribute="trailing" id="EtG-GR-NCW"/>
+                            <constraint firstItem="X91-KF-uSJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Mn7-X8-Vy1"/>
+                            <constraint firstItem="tYz-ad-lcc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="OeR-DC-8CP"/>
+                            <constraint firstItem="m3c-4Z-ns2" firstAttribute="top" secondItem="ead-cG-0Yl" secondAttribute="bottom" constant="8" id="bzU-cF-Orx"/>
+                            <constraint firstAttribute="centerX" secondItem="K3l-TG-oQe" secondAttribute="centerX" id="ddF-nQ-cJS"/>
+                            <constraint firstAttribute="centerX" secondItem="ead-cG-0Yl" secondAttribute="centerX" constant="-0.5" id="f2o-Zy-k3c"/>
+                            <constraint firstItem="tYz-ad-lcc" firstAttribute="top" secondItem="X91-KF-uSJ" secondAttribute="bottom" constant="8" id="m34-po-N4y"/>
+                            <constraint firstItem="K3l-TG-oQe" firstAttribute="top" secondItem="tYz-ad-lcc" secondAttribute="bottom" constant="8" id="mlM-he-uS8"/>
+                            <constraint firstItem="ead-cG-0Yl" firstAttribute="top" secondItem="K3l-TG-oQe" secondAttribute="bottom" constant="8" id="uvh-xI-JoM"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="EtG-GR-NCW"/>
+                                <exclude reference="OeR-DC-8CP"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="OEV-Yv-rTy"/>
+                    <connections>
+                        <outlet property="CheesePicker" destination="tYz-ad-lcc" id="m6R-pO-6wN"/>
+                        <outlet property="cheeseLabel" destination="ead-cG-0Yl" id="2uH-Jx-71r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1135" y="289"/>
+        </scene>
+        <!--Cheese View Controller-->
+        <scene sceneID="6nD-AB-kI3">
+            <objects>
+                <viewController id="Hpf-Qk-nsR" customClass="CheeseViewController" customModule="UIPicker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nJt-KI-iqy"/>
+                        <viewControllerLayoutGuide type="bottom" id="cYr-M8-CSd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sS8-EQ-Qze">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is my Favorite Cheese" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFm-8a-KKQ">
+                                <rect key="frame" x="215" y="289" width="170" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="EFm-8a-KKQ" secondAttribute="centerX" id="7aL-YB-VRc"/>
+                            <constraint firstAttribute="centerY" secondItem="EFm-8a-KKQ" secondAttribute="centerY" constant="0.5" id="QbQ-Tb-f6t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteCheeseLabel" destination="EFm-8a-KKQ" id="qcy-Du-jd7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1s-KL-Lz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1805" y="289"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7rJ-1y-UB4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aEe-eP-wcW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9IA-GA-9kB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Fjb-Xq-LUM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sg6-rv-ccf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="-405"/>
         </scene>
     </scenes>
 </document>
